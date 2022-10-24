@@ -1,0 +1,53 @@
+﻿<Window x:Class="jogo_da_memoria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jogo_da_memoria"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock x:Name="txtTitulo" HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" Text="Jogo da Memória" VerticalAlignment="Top" Width="500" Background="#FF078231" Foreground="White" FontSize="35" Padding="120,0,0,0" ScrollViewer.CanContentScroll="True"/>
+        <Image x:Name="imgFecharTela" HorizontalAlignment="Left" Height="33" Margin="456,10,0,0" VerticalAlignment="Top" Width="34" Source="/x.png" MouseLeftButtonDown="FecharTela"/>
+
+        <TextBlock x:Name="txtErros" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="Erros" VerticalAlignment="Top" FontSize="25"/>
+        <TextBlock x:Name="txtQuantidadeErros" HorizontalAlignment="Center" Margin="0,93,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="25"/>
+
+        <Image x:Name="imgCarta1Fechada" HorizontalAlignment="Left" Height="100" Margin="20,154,0,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta1Selecionada"/>
+        <Image x:Name="imgCarta2Fechada" HorizontalAlignment="Left" Height="100" Margin="141,154,0,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta2Selecionada"/>
+        <Image x:Name="imgCarta3Fechada" HorizontalAlignment="Right" Height="100" Margin="0,154,141,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta3Selecionada"/>
+        <Image x:Name="imgCarta4Fechada" HorizontalAlignment="Right" Height="100" Margin="0,154,20,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta4Selecionada"/>
+        <Image x:Name="imgCarta5Fechada" HorizontalAlignment="Left" Height="100" Margin="20,274,0,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta5Selecionada"/>
+        <Image x:Name="imgCarta6Fechada" HorizontalAlignment="Left" Height="100" Margin="141,274,0,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta6Selecionada"/>
+        <Image x:Name="imgCarta7Fechada" HorizontalAlignment="Right" Height="100" Margin="0,274,141,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta7Selecionada"/>
+        <Image x:Name="imgCarta8Fechada" HorizontalAlignment="Right" Height="100" Margin="0,274,20,0" VerticalAlignment="Top" Width="100" Source="/smooth-trip-logo.png" MouseLeftButtonDown="Carta8Selecionada"/>
+
+        <Image x:Name="imgCarta1Aberta" HorizontalAlignment="Left" Height="100" Margin="20,154,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta1Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta2Aberta" HorizontalAlignment="Left" Height="100" Margin="141,154,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta2Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta3Aberta" HorizontalAlignment="Right" Height="100" Margin="0,154,141,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta3Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta4Aberta" HorizontalAlignment="Right" Height="100" Margin="0,154,20,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta4Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta5Aberta" HorizontalAlignment="Left" Height="100" Margin="20,274,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta5Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta6Aberta" HorizontalAlignment="Left" Height="100" Margin="141,274,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta6Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta7Aberta" HorizontalAlignment="Right" Height="100" Margin="0,274,141,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta7Selecionada" Visibility="Hidden"/>
+        <Image x:Name="imgCarta8Aberta" HorizontalAlignment="Right" Height="100" Margin="0,274,20,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Carta8Selecionada" Visibility="Hidden"/>
+
+        <Button x:Name="btnNovoJogo" Content="Novo Jogo" HorizontalAlignment="Center" Margin="0,424,0,0" VerticalAlignment="Top" Width="118" Height="28" FontSize="16" Background="#FF078231" BorderBrush="{x:Null}" Foreground="White" Click="IniciarNovoJogo"/>
+
+        <Rectangle x:Name="retPopUp" HorizontalAlignment="Center" Height="201" VerticalAlignment="Center" Width="392" Fill="#FF078231" Visibility="Hidden"/>
+        <Image x:Name="imgCongrats" HorizontalAlignment="Left" Height="72" Margin="70,168,0,0" VerticalAlignment="Top" Width="71" Source="/parabens.png" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock x:Name="txtYouWin" HorizontalAlignment="Left" Margin="191,174,0,0" TextWrapping="Wrap" Text="You Win!" VerticalAlignment="Top" Foreground="White" FontSize="36" Visibility="Hidden"/>
+        <TextBlock x:Name="txtMensagem" HorizontalAlignment="Left" Margin="157,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" Text="Você terminou o jogo com 100% de aproveitamento. Parabéns!" Foreground="White" FontSize="16" Height="65" Visibility="Hidden"/>
+        <TextBlock x:Name="txtTrava" HorizontalAlignment="Center" Height="288" VerticalAlignment="Top" Width="500" Visibility="Hidden" Margin="0,131,0,0"/>
+        <Image x:Name="imgOK" HorizontalAlignment="Center" Height="42" Margin="0,304,0,0" VerticalAlignment="Top" Width="41" Source="/ok.png" Visibility="Hidden" MouseLeftButtonDown="FecharPopUp"/>
+
+    </Grid>
+</Window>
