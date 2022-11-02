@@ -30,13 +30,13 @@ namespace jogo_da_memoria
         public void Random()
         {
             Random random = new Random();
-            posicao = random.Next(1, 3);
+            posicao = random.Next(1, 30);
         }
 
-        string imgCorneta = "C:/Users/alexs/Downloads/corneta.jpg";
-        string imgSpotify = "C:/Users/alexs/Downloads/spotify.png";
-        string imgOperaGX = "C:/Users/alexs/Downloads/operagx.png";
-        string imgCSharp = "C:/Users/alexs/Downloads/c#.png";
+        string imgCorneta = "https://thumbs2.imgbox.com/cf/24/Z0NhP227_t.jpg";
+        string imgSpotify = "https://thumbs2.imgbox.com/60/b6/fUmcdqa7_t.png";
+        string imgOperaGX = "https://thumbs2.imgbox.com/26/16/K2U5EeGX_t.png";
+        string imgCSharp = "https://thumbs2.imgbox.com/02/c9/EevK56oS_t.png";
 
         int contadorErros = 0;
 
@@ -82,7 +82,7 @@ namespace jogo_da_memoria
         {
             switch (posicao)
             {
-                case 1:
+                case <=10:
                     if (primeiraCarta == 1 && segundaCarta != 6 || primeiraCarta == 6 && segundaCarta != 1)
                     {
                         contadorErros++;
@@ -113,7 +113,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 2:
+                case <=20:
                     if (primeiraCarta == 1 && segundaCarta != 3 || primeiraCarta == 3 && segundaCarta != 1)
                     {
                         contadorErros++;
@@ -144,7 +144,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 3:
+                case <=30:
                     if (primeiraCarta == 1 && segundaCarta != 8 || primeiraCarta == 8 && segundaCarta != 1)
                     {
                         contadorErros++;
@@ -192,7 +192,7 @@ namespace jogo_da_memoria
         {
             switch (posicao)
             {
-                case 1:
+                case <=10:
                     if (primeiraCarta == 1 && segundaCarta == 6 || primeiraCarta == 6 && segundaCarta == 1)
                     {
                         contadorAcertos++;
@@ -219,7 +219,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 2:
+                case <=20:
                     if (primeiraCarta == 1 && segundaCarta == 3 || primeiraCarta == 3 && segundaCarta == 1)
                     {
                         contadorAcertos++;
@@ -246,7 +246,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 3:
+                case <=30:
                     if (primeiraCarta == 1 && segundaCarta == 8 || primeiraCarta == 8 && segundaCarta == 1)
                     {
                         contadorAcertos++;
@@ -432,7 +432,7 @@ namespace jogo_da_memoria
             Random();
             switch (posicao)
             {
-                case 1:
+                case <=10:
                     imgCarta1Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
                     imgCarta6Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
 
@@ -447,7 +447,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 2:
+                case <=20:
                     imgCarta4Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
                     imgCarta7Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
 
@@ -462,7 +462,7 @@ namespace jogo_da_memoria
 
                     break;
 
-                case 3:
+                case <=30:
                     imgCarta8Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
                     imgCarta1Aberta.Source = new BitmapImage(new Uri($"{imgCorneta}"));
 
